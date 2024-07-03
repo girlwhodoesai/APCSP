@@ -2675,7 +2675,7 @@ section.cover .details {
   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/wf-loading/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
 </script></head><body>
-  <div id="header" data-include="header.html"></div>
+  <div id="header"></div> <!-- Container for the header -->
   <section class="cover"><h1 class="title" style="color:#2D2E2F">Standard Approach to Solving Coding Problems</h1></div></section><div class="pub-body-component"><div class="editor Prosemirror"><style>.ͼ5 {color: #7a757a;}
 .ͼ6 {text-decoration: underline;}
 .ͼ7 {text-decoration: underline; font-weight: bold;}
@@ -2713,38 +2713,25 @@ section.cover .details {
     }
 }
 </code></pre><ol id="nvz8i7ywthy"><p id="nrbee32pyf6"></p><p id="nbnapt2s01i"><strong>4. Test Your Code:</strong></p><ul id="nl5i30s7jxm"><li><p id="ngf5vbcurro"><strong>Sample input:</strong> <code>{1, 2, 3, 4, 5}</code></p><ul id="nazuoljr06z"><li><p id="nt1aejlt9i0"><strong>Expected output:</strong> <code>15</code></p></li></ul></li><li><p id="n07bq62tc7m"><strong>Edge case (empty array):</strong> <code>{}</code></p><ul id="n1jna5dp42y"><li><p id="nze6fkfmycr"><strong>Expected output:</strong> <code>0</code></p></li></ul></li><li><p id="nj7vznovr60"><strong>Edge case (array with one element):</strong> <code>{10}</code></p><ul id="ngm22uxs8nb"><li><p id="nodvlu50gpf"><strong>Expected output:</strong> <code>10</code></p></li></ul></li></ul><p id="nl0sn0dd3mh"></p><p id="nbdmkqzedpp"><strong>5. Optimize Your Solution:</strong></p><ul id="ntmhp6xuvdq"><li><p id="n1iau4nuq6d">The current solution has a time complexity of O(n) and a space complexity of O(1), which is optimal for this problem.</p></li></ul></li></ol><h3 id="practice-problems">Practice Problems</h3><ol id="nij9bgnthjc"><li><p id="n0aiqox0w9p"><strong>Find the Maximum Element:</strong> Write a program that finds the maximum element in an array of integers.</p></li><li><p id="na69mlvfvzn"><strong>Reverse an Array:</strong> Write a program that reverses the elements of an array.</p></li><li><p id="nwflduy281y"><strong>Count Vowels in a String:</strong> Write a program that counts the number of vowels in a given string.</p></li></ol><h3 id="conclusion">Conclusion</h3><p id="njrh40v7xpi">By following these steps, you can systematically approach and solve coding problems. Practice these steps regularly, and over time, you&#x27;ll become more proficient at solving a wide range of problems in Java.</p><p id="n309ats0xw5"></p><p id="nq61x434yh0"></p><p id="nvvwbeimohk"></p><div class="pub-notes"></div></div></div>
-<div id="footer" data-include="footer.html"></div>
-<div id="newfooter"></div> <!-- Container for the header -->
+
+<div id="footer"></div> <!-- Container for the header -->
 <script>
-        function includeHTML() {
-            const includeElements = document.querySelectorAll('[data-include]');
-            includeElements.forEach(el => {
-                fetch(el.getAttribute('data-include'))
-                    .then(response => response.text())
-                    .then(data => el.innerHTML = data)
-                    .catch(err => console.error('Error loading include:', err));
-            });
-        }
-
-        function includeHEADER() {
-            const includeElements = 'data-include="footer.html"';
-            includeElements.forEach(el => {
-                fetch(el.getAttribute('data-include'))
-                    .then(response => response.text())
-                    .then(data => el.innerHTML = data)
-                    .catch(err => console.error('Error loading include:', err));
-            });
-        }
-
+        document.addEventListener("DOMContentLoaded", function() {
+          fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('header').innerHTML = data;
+          })
+        .catch(error => console.error('Error loading the header:', error)); 
+        });
         document.addEventListener("DOMContentLoaded", function() {
           fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-              document.getElementById('newfooter').innerHTML = data;
+              document.getElementById('footer').innerHTML = data;
           })
         .catch(error => console.error('Error loading the header:', error)); 
         });
 
-        // window.onload = includeHTML;
-    </script>
+</script>
 </body></html>
